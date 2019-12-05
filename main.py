@@ -33,7 +33,7 @@ def index():
 
 @app.route('/<pokemon>')
 def pokemon(pokemon):
-	req = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon}').json()
+	req = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon}').json() 
 	stats = req['stats']
 	types = req['types']
 	sprites = [req['sprites'][i] for i in req['sprites']]
@@ -41,6 +41,7 @@ def pokemon(pokemon):
 	name = name.capitalize()
 	weight = req['weight']
 	sprites[0], sprites[1], sprites[2], sprites[3], sprites[4], sprites[5], sprites[6], sprites[7] = sprites[4], sprites[0], sprites[5], sprites[1], sprites[6], sprites[2], sprites[7], sprites[3]
+
 	return render_template('pokemon.html', stats = stats, types = types, sprites = sprites, name = name, weight = weight)
 
 @app.route('/get_pokemon', methods=['POST'])

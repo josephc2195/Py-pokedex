@@ -6,8 +6,13 @@
 {% block content %}
     {% include "searchbar.html" %}
     <div class="container d-flex flex-column flex-wrap justify-content-center align-items-center text-center mt-5">
+      <!-- <a href="#" class="previous">&laquo; Previous</a>
+      <a href="#" class="next">Next &raquo;</a>
+      <a href="https://pokeapi.co/api/v2/pokemon/" class="previous round">&#8249;</a>
+      <a href="https://pokeapi.co/api/v2/pokemon/" class="next round">&#8250;</a>
+      -->
          <h1>{{name}}</h1>
-         <p> Base stats:   </p>
+         <p> Base Stats: </p>
          <div class="container d-flex flex-wrap justify-content-center align-items-center text-center">
              {% for i in stats %}
                  <p class="p-3">
