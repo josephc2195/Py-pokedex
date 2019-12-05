@@ -16,15 +16,12 @@ def pokemon(pokemon):
 	req = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon}').json()
 	stats = req['stats']
 	types = req['types']
-	sprites = req['sprites']
+	sprites = [req['sprites'][i] for i in req['sprites']]
 	name = req['name']
+	name = name.capitalize()
 	weight = req['weight']
-
-	print(json.dumps(stats, indent=2))
-	print(json.dumps(types, indent=2))
-	print(json.dumps(sprites, indent=2))
-	print(json.dumps(name, indent=2))
-	print(json.dumps(weight, indent=2))
+	sprites[0], sprites[1], sprites[2], sprites[3], sprites[4], sprites[5], sprites[6], sprites[7] = sprites[4], sprites[0], sprites[5], sprites[1], sprites[6], sprites[2], sprites[7], sprites[3]
+	print(sprites)
 
 
 
