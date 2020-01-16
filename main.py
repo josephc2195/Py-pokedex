@@ -1,8 +1,5 @@
 from flask import Flask, render_template, url_for, request, redirect
 import requests
-import os
-import asyncio
-import aiohttp
 from flask_bootstrap import Bootstrap
 from flask_fontawesome import FontAwesome
 import json
@@ -33,7 +30,7 @@ def index():
 
 @app.route('/<pokemon>')
 def pokemon(pokemon):
-	req = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon}').json() 
+	req = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon}').json()
 	stats = req['stats']
 	types = req['types']
 	sprites = [req['sprites'][i] for i in req['sprites']]
