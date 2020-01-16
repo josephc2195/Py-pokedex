@@ -5,6 +5,7 @@ from flask_bootstrap import Bootstrap
 from flask_fontawesome import FontAwesome
 import json
 
+app = Flask(__name__)
 Bootstrap(app)
 fa = FontAwesome(app)
 
